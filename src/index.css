@@ -9,3 +9,58 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+
+img {
+    display: block;
+    object-fit: contain;
+    width: 100px;
+    height: 150px;
+}
+
+.image {
+    width: 100px;
+    height: 150px;
+}
+
+.all-products {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 60px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    width: 15%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #1111;
+    background-color: #1b1b1b;
+    color: #f1f1f1;
+    border-radius: 4px;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 17px;
+    max-height: 20px;
+    overflow: hidden;
+}
+p {
+    font-size: 15px;
+    line-height: 1.4em;
+}
