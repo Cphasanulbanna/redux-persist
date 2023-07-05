@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
-const Home = ({ setCart }) => {
+const Home = () => {
     const [products, setProducts] = useState([]);
     const fetchProducts = async () => {
         try {
@@ -16,10 +18,11 @@ const Home = ({ setCart }) => {
         fetchProducts();
     }, []);
 
+    const dispatch = useDispatch();
     console.log(products);
 
-    const addToCart = (product) => {
-        setCart((prev) => [...prev, product]);
+    const addtocart = (product) => {
+        dispatch(addToCart(product));
     };
     return (
         <section id="home">
@@ -37,7 +40,7 @@ const Home = ({ setCart }) => {
                             />
                         </div>
                         <p className="price">{product.price}</p>
-                        <button onClick={() => addToCart(product)}>cart</button>
+                        <button onClick={() => addtocart(product)}>cart</button>
                     </div>
                 ))}
             </div>

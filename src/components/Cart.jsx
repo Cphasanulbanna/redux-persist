@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const Cart = ({ cart }) => {
+const Cart = () => {
+    const cart = useSelector((state) => state.cart.cart);
     return (
         <section id="cart">
             <div className="all-products">
