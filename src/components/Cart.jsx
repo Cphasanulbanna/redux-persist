@@ -5,7 +5,7 @@ import deleteProduct from "../assets/images/delete.png";
 import { removeFromCart } from "../redux/cartSlice";
 
 const Cart = () => {
-    const cart = useSelector((state) => state.cart.cart);
+    const { cart } = useSelector((state) => state.cart);
 
     const dispatch = useDispatch();
 
