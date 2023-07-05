@@ -6,15 +6,16 @@ import { addToCart } from "../redux/cartSlice";
 
 const Home = () => {
     const [products, setProducts] = useState([]);
-    const fetchProducts = async () => {
-        try {
-            const response = await axios.get("https://fakestoreapi.com/products");
-            setProducts(response.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
     useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get("https://fakestoreapi.com/products");
+                setProducts(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
         fetchProducts();
     }, []);
 

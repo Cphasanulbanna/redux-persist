@@ -1,8 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import deleteProduct from "../assets/images/delete.png";
+import { removeFromCart } from "../redux/cartSlice";
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart.cart);
+
+    const dispatch = useDispatch();
+
+    const deleteFromCart = (id) => {
+        dispatch(removeFromCart(id));
+    };
     return (
         <section id="cart">
             <div className="all-products">
@@ -18,7 +27,25 @@ const Cart = () => {
                                 alt="product"
                             />
                         </div>
-                        <p className="price">{product.price}</p>
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "space-between",
+                            }}
+                        >
+                            <p className="price">{product.price}</p>
+                            <div
+                                style={{ width: "25px", height: "25px", cursor: "pointer" }}
+                                className="icon"
+                                onClick={() => deleteFromCart(product.id)}
+                            >
+                                <img
+                                    src={deleteProduct}
+                                    alt="dlt"
+                                />
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
